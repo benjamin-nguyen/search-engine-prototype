@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="col">
+    <div class="col mt-5">
+      <img src="{{url_for('static', filename='./images/logo.png')}}" class="mx-auto d-block" style="width: 25%; height: 25%">
+    </div>    
+
+    <form class="mt-5" name="search" action="/results" method="POST">
+      <div class="query col-6 mx-auto input-group">
+        <span class="input-group-text" id="basic-addon1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+            </svg>
+        </span>
+          <input type="text" id="search" class="form-control" name="query" placeholder="Search..." value required>
+      </div>
+      
+        <div class="full-screen hidden flex-container-center">
+          <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="closePopup()"></button>
+          <div class="options col-3 mt-5 mx-auto">
+            <div class="form-group">
+              <input type="number" min="1" class="form-control" name="doc_limit" placeholder="Enter a query document print limit..." value="{{doc_limit}}" required>
+            </div>
+
+            <div class="form-group">
+              <select class="form-control" name="stopwords">
+                  <option value="y">Use Stopwords</option>
+                  <option value="n">Don't Use Stopwords</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <select class="form-control"  name="stemming">
+                  <option value="y">Use Stemming</option>
+                  <option value="n">Don't Use Stemming</option>
+              </select>
+            </div>
+          
+            <div class="form-group">
+              <select class="form-control" name="model">
+                  <option value=0>TF</option>
+                  <option value=1>BM25</option>
+                  <option value=2>K-Means</option>
+                  <option value=3>KNN</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Search</button>
+        </div>
+      </form> 
+    </div>
+
+
+{% endblock %}
