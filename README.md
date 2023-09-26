@@ -1,4 +1,4 @@
-﻿# Search Engine Prototype (CPS842)
+﻿# Search Engine Prototype
 
 ## Description
 
