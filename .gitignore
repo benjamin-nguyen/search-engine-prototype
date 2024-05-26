@@ -1,0 +1,15 @@
+test.py
+mock.py
+build
+invert.c*
+out_*
+doc_vects.json*
+models/kmeans_prep.c*
+data/small_test.jsonl
+data/smaller_test.jsonl
+data/smallest_test.jsonl
+data/trec_corpus_5000.jsonl.gz
+data/doc_freq.json
+data/trec_corpus_5000_compiled.json
+data/trec_corpus_5000_compiled_reduced.json
+__pycache__/
